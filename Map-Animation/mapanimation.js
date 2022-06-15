@@ -20,23 +20,48 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicmVkcGVlbCIsImEiOiJjbDRlaXF2MjcwM3lqM3JsaWxrd
 // This is the map instance
 let map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11',
+  style: 'mapbox://styles/redpeel/cl4f2a80i004l15myva4wm9ti',
   center: [-71.104081, 42.365554],
   zoom: 14,
 });
 
 // TODO: add a marker to the map at the first coordinates in the array busStops. The marker variable should be named "marker"
-var marker = new mapboxgl.Marker()
-  .setLngLat(busStops[0])
-  .addTo(map);
-// counter here represents the index of the current bus stop
-let counter = 0;
-function move() {
-  busStops.forEach
-  // TODO: move the marker on the map every 1000ms. Use the function marker.setLngLat() to update the marker coordinates
-  // Use counter to access bus stops in the array busStops
-  // Make sure you call move() after you increment the counter.
+var marker = new mapboxgl.Marker().setLngLat(busStops[0]).addTo(map);
+
+/*let counter = 0;
+function move(){
+  setTimeout(() => {
+    if (counter >= busStops.length) return;
+      marker.setLngLat(busStops[counter])
+      counter++
+      move()
+  }, 1000);
+  
+  
 }
+*/
+
+
+function move(){
+  for (let i = 0; i < busStops.length; i++) {
+    function timer(){
+      var k = i;
+      setTimeout(() => {
+        marker[k] = new mapboxgl.Marker().setLngLat(busStops[k]).addTo(map)
+      }, 1000);
+    }
+    timer()
+  }
+  }
+
+
+
+// counter here represents the index of the current bus stop
+// TODO: move the marker on the map every 1000ms. Use the function marker.setLngLat() to update the marker coordinates
+// Use counter to access bus stops in the array busStops
+// Make sure you call move() after you increment the counter.
+
+
 
 // Do not edit code past this point
 if (typeof module !== 'undefined') {

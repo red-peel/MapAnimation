@@ -20,7 +20,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicmVkcGVlbCIsImEiOiJjbDRlaXF2MjcwM3lqM3JsaWxrd
 // This is the map instance
 let map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/redpeel/cl4f2a80i004l15myva4wm9ti',
+  style: 'mapbox://styles/redpeel/cl4f65qhx001u15lx3mkqqndt',
   center: [-71.104081, 42.365554],
   zoom: 14,
 });
@@ -28,6 +28,7 @@ let map = new mapboxgl.Map({
 // TODO: add a marker to the map at the first coordinates in the array busStops. The marker variable should be named "marker"
 var marker = new mapboxgl.Marker().setLngLat(busStops[0]).addTo(map);
 
+//Prior version of code used.
 /*let counter = 0;
 function move(){
   setTimeout(() => {

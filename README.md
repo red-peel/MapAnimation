@@ -5,5 +5,7 @@
  
  Open index.html in browser, then hit show stops button.
  
+ Future plans: fix known error below, add ETA.
+ 
  Known error: The stops should show up one after another. However after timer goes off, all stops show.
 ![](</example.png>)
